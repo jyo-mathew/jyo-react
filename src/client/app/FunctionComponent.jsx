@@ -7,4 +7,5 @@ const Name = ({ name }) => {
     );
 }
 
+
 export default Name;

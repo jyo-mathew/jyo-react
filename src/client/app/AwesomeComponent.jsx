@@ -4,12 +4,13 @@ class AwesomeComponent extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {likesCount : 0};
+        this.state = {likesCount : 0,dislikeCount : 2};
         this.onLike = this.onLike.bind(this);
         this.onDisLike = this.onDisLike.bind(this);
     }
 
     onLike () {
+        alert(this.state.dislikeCount);
         let newLikesCount = this.state.likesCount + 1;
         this.setState({likesCount: newLikesCount});
     }
