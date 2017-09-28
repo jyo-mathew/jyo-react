@@ -30,4 +30,4 @@ class AwesomeComponent extends React.Component {
 
 }
 
-export default AwesomeComponent9;
+export default AwesomeComponent;
