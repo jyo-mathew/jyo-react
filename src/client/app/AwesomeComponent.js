@@ -1,22 +1,23 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {render} from 'react-dom';
-class AwesomeComponent extends React.Component {
+class AwesomeComponent extends Component {
 
     constructor(props) {
         super(props);
         this.state = {likesCount : 0,dislikeCount : 2};
+
         this.onLike = this.onLike.bind(this);
         this.onDisLike = this.onDisLike.bind(this);
     }
 
     onLike () {
-        alert(this.state.dislikeCount);
-        let newLikesCount = this.state.likesCount + 1;
-        this.setState({likesCount: newLikesCount});
+        //alert(this.state.dislikeCount);
+        //let newLikesCount = this.state.likesCount + 1;
+        this.setState({likesCount: this.state.likesCount + 1});
     }
     onDisLike(){
-        let newLikesCount = this.state.likesCount - 1;
-        this.setState({likeCount: 5 });
+        //let newLikesCount = this.state.likesCount - 1;
+        this.setState({likesCount: this.state.likesCount -1 });
     }
 
     render() {
