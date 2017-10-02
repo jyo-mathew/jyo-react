@@ -1,8 +1,7 @@
-import React from 'react';
+import React,{state,PropTypes} from 'react';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
-
-import * as courseActions from '../../actions/createCourse';
+//import PropTypes from 'prop-types';
+import * as courseActions from '../../actions/courseAction';
 class CoursesPage extends React.Component{
   constructor(props,context){
         super(props,context);
@@ -15,27 +14,29 @@ class CoursesPage extends React.Component{
     }
 
     onTitleChange(event){
+
         const course = this.state.course;
         course.title =event.target.value;
-        this.setState({course: course});
+        //this.setState({course: course});
     }
-    onClickSave(){
-     // console.log(">>>>>"+{this.state.course.title});
-       // alert(`Saving ${this.state.course.title}`);
+    onClickSave(e){
+
+       //alert(`Saving ${this.state.course.title}`);
       this.props.dispatch(courseActions.createCourses(this.state.course));
     }
-    courseRow(course,index){
+   courseRow(course,index){
       return <div key="index"> {course.title}</div>;
     }
     render(){
         return(
             <div>
                 <h1>Courses</h1>
-              {this.props.course.map(this.courseRow())}
+              {this.props.courses.map(this.courseRow)}
+              {this.state.course.title};
                 <h2>Add Course</h2>
                 <input type="text"
                        onChange={this.onTitleChange}
-                       value={this.state.course.title}
+
                   />
                 <input  type="submit"
                         value="save"
@@ -50,16 +51,18 @@ class CoursesPage extends React.Component{
     }
 
 }
-CoursesPage.propTypes={
-  dispatch: PropTypes.func.required,
+/*CoursesPage.propTypes={
+
   course :PropTypes.array.required
-};
+};*/
 function mapStateToProps(state,ownProps){
   return{
     courses:state.courses
   };
 
 }
+//const connected = connect(mapStateToProps);
+//export default connected(CoursesPage);
 
 export default connect(mapStateToProps)(CoursesPage);
 

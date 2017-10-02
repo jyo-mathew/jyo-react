@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script language="JavaScript">
+'use strict';
+//alert("hi");
+let updateFunction=[];
+for(var i= 0;i<2 ; i++){
+updateFunction.push(function(){return i *2;});
+}
+//alert(updateFunction[0]());
+  var getPrice = () => 5.99;
+  //console.log(typeof getPrice);
+  //excute the function
+ // console.log(getPrice());
+  var count = count => count*3;
+  //console.log(count(3));'
+var count1 = (count,tax) => count+(tax*3);
+//console.log(count1(3,4));
+
+var count2 = (count,tax)=>{
+
+    return count+tax*4;
+}
+//console.log(typeof count2);
+
+var total = function(reduction = tax, tax =1){
+//console.log(reduction+tax);
+}
+
+var getTotal = new Function ("price =12","return price;");
+console.log(getTotal());
+//document.addEventListener('click',() => {console.log(this)})
+
+  var showCategories = function(productID, ...categories){
+    console.log(categories instanceof Array);
+    console.log(categories);
+  }
+ // showCategories('ww',1,1,4,);
+
+  var price = 4; var quantity =7;
+  var  productView={
+      price,
+        quantity,
+        calculateValue(){
+          return price * quantity;
+        }
+};
+console.log(productView.calculateValue())
+
+</script>
+
+
+
+</body>
+</html>

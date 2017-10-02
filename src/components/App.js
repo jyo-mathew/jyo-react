@@ -1,11 +1,11 @@
 
- import React,{Component} from 'react';
+ import React,{Component,PropTypes} from 'react';
  import {render} from 'react-dom';
  import AwesomeComponent from '../client/app/AwesomeComponent.js';
  import Shoppinglist from '../client/app/Shoppinglist.js';
  import Name from '../client/app/FunctionComponent.js';
  import Header from './common/Header';
- import PropTypes from 'prop-types';
+ //import PropTypes from 'prop-types';
  class App extends Component {
 
  constructor(props){
@@ -32,7 +32,7 @@
  activities1: activities1
  };
 
- this.state=s;
+ //this.state=s;
  }
 
 
@@ -49,7 +49,7 @@
 
  }
  App.propTypes={
- children: PropTypes.object.required
+ children: PropTypes.any.isRequired
  };
  export default App;
 /* render(<App/>, document.getElementById('app'));*/
