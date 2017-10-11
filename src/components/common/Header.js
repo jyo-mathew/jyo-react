@@ -9,6 +9,10 @@ const Header =()=> {
       <Link to="/about" activeClassName="active">About</Link>
       {" | "}
       <Link to="/course" activeClassName="active">Courses</Link>
+      {"  |  "}
+      <Link to="/dashBoard" activeClassName="active">Dash Board</Link>
+      {"  |  "}
+      <Link to="/activitiesPage" activeClassName="active">Activities Page</Link>
     </nav>
   );
 };

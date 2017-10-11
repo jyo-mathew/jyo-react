@@ -6,6 +6,7 @@
 </head>
 <body>
 <script language="JavaScript">
+  System.import
 'use strict';
 //alert("hi");
 let updateFunction=[];
@@ -50,8 +51,41 @@ console.log(getTotal());
           return price * quantity;
         }
 };
-console.log(productView.calculateValue())
+//console.log(productView.calculateValue())
 
+  var categories =[1,2,3];
+
+  for(var item of categories){
+   //console.log(item);
+  }
+
+  let salary ={
+      low :'33',
+      medium :'44',
+       high : '75'
+  };
+  let newLow, newMedium, newHigh;
+({low: newLow,medium: newMedium, high: newHigh} = salary);
+console.log(newHigh);
+
+this.x = 9;    // this refers to global "window" object here in the browser
+var module = {
+  x: 81,
+  getX: function() { return this.x; }
+};
+
+module.getX(); // 81
+console.log(module.getX);
+
+var retrieveX = module.getX;
+retrieveX();
+// returns 9 - The function gets invoked at the global scope
+
+// Create a new function with 'this' bound to module
+// New programmers might confuse the
+// global var x with module's property x
+var boundGetX = retrieveX.bind(module);
+boundGetX(); // 81
 </script>
 
 

@@ -4,9 +4,10 @@ import {connect} from 'react-redux';
 import * as courseActions from '../../actions/courseAction';
 class CoursesPage extends React.Component{
   constructor(props,context){
+       debugger;
         super(props,context);
         this.state={
-          course : {title: ""}
+          course : {id:1,title: ""}
         };
 
         this.onTitleChange = this.onTitleChange.bind(this);
@@ -27,6 +28,8 @@ class CoursesPage extends React.Component{
    courseRow(course,index){
       return <div key="index"> {course.title}</div>;
     }
+    deleteCourse(){
+    }
     render(){
         return(
             <div>
@@ -43,6 +46,7 @@ class CoursesPage extends React.Component{
                         onClick={this.onClickSave}
 
                 />
+              <input type="text"  placeholder="enter key to delete" onChange={this.deleteCourse()} />
 
 
             </div>
@@ -56,8 +60,9 @@ class CoursesPage extends React.Component{
   course :PropTypes.array.required
 };*/
 function mapStateToProps(state,ownProps){
+  debugger;
   return{
-    courses:state.courses
+    courses: state.courses
   };
 
 }
